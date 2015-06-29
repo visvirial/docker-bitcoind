@@ -28,7 +28,7 @@ $ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 visvirial/bitcoind
 ```
 
 However, it is strongly recommended that you change the user and password for RPC access
-(change ${RPCUSER} and ${RPCPASSWORD} below).
+(change `${RPCUSER}` and `${RPCPASSWORD}` below).
 
 ``` bash
 $ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 \
@@ -54,7 +54,7 @@ Customize `launch-docker.sh` script to fit your environment.
 
 ## Using RPC
 
-You can use `bitcoin-cli` to invoke RPC calls from the host machine.
+You can use `bitcoin-cli` to invoke RPC calls from the host machine as follows.
 
 ``` bash
 $ bitcoin-cli -rpcuser=${RPCUSER} -rpcpassword=${RPCPASSWORD} getinfo
