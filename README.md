@@ -24,7 +24,7 @@ $ docker build --tag=visvirial:bitcoind .
 You can simply launching the container:
 
 ``` bash
-$ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 visvirial:bitcoind
+$ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 visvirial/bitcoind
 ```
 
 However, it is strongly recommended that you change the user and password for RPC access
@@ -34,7 +34,7 @@ However, it is strongly recommended that you change the user and password for RP
 $ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 \
 	-e BITCOIND_RPCUSER=${RPCUSER} \
 	-e BITCOIND_RPCPASSWORD=${RPCPASSWORD} \
-	visvirial:bitcoind
+	visvirial/bitcoind
 ```
 
 Bitcoin Core will sync every time you launch the container, which consumes much CPU resources and time.
@@ -47,8 +47,10 @@ $ docker run -itd --name bitcoind -p 8332:8332 -p 8333:8333 \
 	$(test -d $DATADIR/chainstate && echo -v $DATADIR/chainstate:/home/docker/.bitcoin/chainstate) \
 	-e BITCOIND_RPCUSER=${RPCUSER} \
 	-e BITCOIND_RPCPASSWORD=${RPCPASSWORD} \
-	visvirial:bitcoind
+	visvirial/bitcoind
 ```
+
+Customize `launch-docker.sh` script to fit your environment.
 
 ## Using RPC
 
