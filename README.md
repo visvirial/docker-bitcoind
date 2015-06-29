@@ -8,7 +8,7 @@ docker-bitcoind
 Just pull the docker image from Docker Hub.
 
 ``` bash
-$ docker pull visvirial:bitcoind
+$ docker pull visvirial/bitcoind
 ```
 
 ### Building By Yourself
